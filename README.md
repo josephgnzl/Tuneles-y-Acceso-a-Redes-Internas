@@ -33,7 +33,7 @@ Ejecutamos `ip a` en el host `PIVOTE1` para identificar sus interfaces, direccio
 | enp0s8   | 20.20.20.3/24 | 20.20.20.0/24 | Segmento interno                    |
 | enp0s9   | 10.0.0.53/24  | 10.0.0.0/24   | Red accesible desde nuestra máquina |
 
-Este resultado nos indica que `PIVOTE1` cuenta con tres interfaces de red, lo que significa que tiene conectividad con tres segmentos diferentes. Nuestro objetivo en este escenario es sencillo: acceder al segmento de red 20.20.20.0/24 a través del host pivote.
+Este resultado nos indica que `PIVOTE1` cuenta con tres interfaces de red, lo que significa que tiene conectividad con tres segmentos diferentes. **Nuestro objetivo en este escenario es sencillo: acceder al segmento de red 20.20.20.0/24 a través del host pivote.**
 
 ### 02. Preparación del servidor Proxy
 
