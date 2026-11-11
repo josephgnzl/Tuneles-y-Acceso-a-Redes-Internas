@@ -23,7 +23,7 @@ Para este escenario utilizaremos **Ligolo-ng**, una herramienta ampliamente util
 | Uso principal | Acceso y enumeración de redes internas. |
 | Alternativas | Chisel, SSH Tunneling y Proxychains. |
 
-### 01. Enumeracion e Identificación de interfaces de red
+### 01. Enumeración e Identificación de interfaces de red
 
 Ejecutamos `ip a` en el host `PIVOTE1` para identificar sus interfaces, direcciones IP y las redes a las que tiene conectividad.
 
@@ -47,7 +47,7 @@ Ejecuta:
 
 ```Dato interesante```; El parámetro -selfcert me permite generar y utilizar un certificado TLS autofirmado para establecer una comunicación cifrada entre el Proxy y el Cliente.
 
-### 03. En el host PIVOTE (máquina comprometida)
+### 03. En el host PIVOTE1
 
 Tienes que conectar tu archivo cliente (Agent) al servidor Proxy que dejamos ejecutándose en nuestra máquina de ataque. 
 
@@ -60,9 +60,9 @@ Ejecuta:
 ```Dato interesante```; El parámetro -ignote-cert omite la validación del certificado TLS del servidor 
 
 
-### 04. Verificación de conectividad hacia `PIVOTE2`
+### 04. Verificación de conectividad hacia PIVOTE2
 
-Una vez establecido el túnel, verificamos que podemos alcanzar la dirección 20.20.20.3 a través de nuestra consola.
+Al hacer PING, hemos tenido exito:
 
 ```
 PING 20.20.20.3 (20.20.20.3) 56(84) bytes of data.
@@ -70,10 +70,11 @@ PING 20.20.20.3 (20.20.20.3) 56(84) bytes of data.
 64 bytes from 20.20.20.3: icmp_seq=2 ttl=64 time=0.98 ms
 64 bytes from 20.20.20.3: icmp_seq=3 ttl=64 time=1.12 ms
 64 bytes from 20.20.20.3: icmp_seq=4 ttl=64 time=1.05 ms
-
---- 20.20.20.3 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3005ms
 ```
+Una vez establecido el túnel, debemos verificar desde nuestra máquina de ataque que podemos alcanzar la dirección 20.20.20.3 a través de la conectividad proporcionada por Ligolo-ng.
+
+Esta dirección corresponde a nuestra máquina objetivo para practicar movimiento lateral. Básicamente, utilizamos ```PIVOTE1``` como intermediario para alcanzar un segundo equipo al que no teníamos acceso directo ```PIVOTE2```. En otras palabras, convertimos la primera máquina en un trampolín para llegar a la siguiente.
+
 
 ## H4ck the planet, Joseph <3
 
