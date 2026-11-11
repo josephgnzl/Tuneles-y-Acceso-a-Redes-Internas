@@ -62,7 +62,7 @@ Ejecuta:
 
 ### 04. Verificación de conectividad
 
-Una vez establecido el túnel, verificamos que podemos alcanzar la dirección 20.20.20.3 a través de la interfaz virtual ligolo.
+Una vez establecido el túnel, verificamos que podemos alcanzar la dirección 20.20.20.3 a través de nuestra consola.
 
 ```
 PING 20.20.20.3 (20.20.20.3) 56(84) bytes of data.
@@ -76,5 +76,6 @@ PING 20.20.20.3 (20.20.20.3) 56(84) bytes of data.
 ```
 
 ## H4ck the planet, Joseph <3
+
 
 
