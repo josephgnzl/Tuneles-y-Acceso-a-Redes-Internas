@@ -60,7 +60,7 @@ Ejecuta:
 ```Dato interesante```; El parámetro -ignote-cert omite la validación del certificado TLS del servidor 
 
 
-### 04. Verificación de conectividad
+### 04. Verificación de conectividad hacia `PIVOTE2`
 
 Una vez establecido el túnel, verificamos que podemos alcanzar la dirección 20.20.20.3 a través de nuestra consola.
 
